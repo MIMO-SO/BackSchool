@@ -37,4 +37,3 @@ jQuery(document).ready(function($){
         }
 	}
 });
-x1.00
