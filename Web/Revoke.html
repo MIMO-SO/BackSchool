@@ -1,0 +1,118 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="renderer" content="webkit" />
+    <link href="../Content/css/index.css?v=20200528" rel="stylesheet" />
+    <script src="../Scripts/jquery-3.4.1.min.js"></script>
+    <script src="../Scripts/validation.js?dt=20200520"></script>
+    <link href="../Scripts/layer/theme/layer.css" rel="stylesheet" />
+    <script src="../Scripts/layer/layer.js"></script>
+    <title>闽南师范大学-疫情防控管理平台</title>
+    <script type="text/javascript">
+        /*解决苹果返回不刷新问题*/
+        $(function () {
+            var isPageHide = false;
+            window.addEventListener('pageshow', function () {
+                if (isPageHide) {
+                    window.location.reload();
+                }
+            });
+            window.addEventListener('pagehide', function () {
+                isPageHide = true;
+            });
+        });
+    </script>
+</head>
+<body>
+    
+<form name="form1" method="post" id="form1">
+    <h1>
+        <span id="TopicName">返校申请撤销</span>
+    </h1>
+    <div class="Table_list">
+        <div class="row">
+            <div class="th_right w_100">
+                <pre></pre>
+                <p>
+                    <div class="check_input text-center">
+                        <input type="checkbox" name="check" id="ckRevoke" />
+                        <label for="ckRevoke">我已认真阅读撤销说明</label>
+                    </div>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="th_left"><span class="red">*</span>撤销原因：</div>
+            <div class="th_right">
+                <textarea name="RevokeReason" class="validate required input-style" maxlength="50" rows="3"></textarea>
+            </div>
+        </div>
+    </div>
+    <div id="SaveBtnDiv" class="btn_div fixed">
+        <input data-val="true" data-val-required="Id 字段是必需的。" id="Id" name="Id" type="hidden" value="10778074-1c02-487d-b4dc-60ddf404ffcc" />
+        <input name="ReSubmiteFlag" type="hidden" value="4d661250-c094-4737-8170-2abb7e22d402" />
+        <button type="button" class="save_form btnDisabled" disabled>确认撤销</button>
+    </div>
+</form>
+<script type="text/javascript">
+    $(function () {
+        Index.init();
+    });
+    var Index = {
+        init: function () {
+            Index.verifyRepeatability();
+            Index.CheckRevoke();
+        },
+        CheckRevoke: function () {
+            $("body").on("change", "input[name='check']", function (e) {
+                if ($(this).is(':checked')) {
+                    $(".save_form").removeClass("btnDisabled").removeAttr("disabled");
+                } else {
+                    $(".save_form").addClass("btnDisabled").attr('disabled', "disabled");
+                }
+            })
+        },
+        verifyRepeatability: function () {
+            options = {
+                Newrule: function (t, vtype, text, value) {
+                    var validaresult = true;
+                    return validaresult;
+                },
+                callback: function () {
+                    $('.save_form').attr('disabled', "disabled");
+                    $(".save_form").text("提交中...");
+                    $("#form1").submit();
+                    return false;
+                }
+            };
+            $("#form1").validation(options);
+        }
+    }
+</script> 
+        <link href="../Content/css/menustyle.css?dt=20200429" rel="stylesheet" />
+        <script src="../Scripts/menu.js"></script>
+        <div id="cd-nav" class="is-fixed">
+            <a href="javascript:void(0)" class="cd-nav-trigger"><span></span></a>
+            <nav id="cd-main-nav">
+                <ul>
+                        <li>
+                            <a href="http://dxg.mnnu.edu.cn/SPCP/Web/Account/ChooseSys">
+                                <img src="../Content/img/icon1.png" /> 返回首页
+                            </a>
+                        </li>
+                                        <li>
+                        <a href="http://dxg.mnnu.edu.cn/SPCP/Web/Account/Logout">
+                            <img src="../Content/img/icon3.png" /> 安全退出
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+</body>
+</html>
+<!--第二版-->
