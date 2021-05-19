@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="renderer" content="webkit" />
+    <link href="../Content/css/index.css?v=20200528" rel="stylesheet" />
+    <script src="../Scripts/jquery-3.4.1.min.js"></script>
+    <script src="../Scripts/validation.js?dt=20200520"></script>
+    <link href="../Scripts/layer/theme/layer.css" rel="stylesheet" />
+    <script src="../Scripts/layer/layer.js"></script>
+    <title>闽南师范大学-疫情防控管理平台</title>
+    <script type="text/javascript">
+        /*解决苹果返回不刷新问题*/
+        $(function () {
+            var isPageHide = false;
+            window.addEventListener('pageshow', function () {
+                if (isPageHide) {
+                    window.location.reload();
+                }
+            });
+            window.addEventListener('pagehide', function () {
+                isPageHide = true;
+            });
+        });
+    </script>
+</head>
+<body>
+    
+
+<div class="logo">
+    <img src="../Content/img/logo.png" />
+</div>
+<div class="resist_bg">
+
+    <div class="title_img">
+        <img src="../Content/img/title.png" />
+    </div>
+    <div class="info_box">
+        
+        <div class="info_list">
+                <div class="list_row">
+                    <div class="row_left"><span>学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号</span>：</div>
+                    <div class="row_right">1705120227</div>
+                </div>
+                <div class="list_row">
+                    <div class="row_left"><span>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</span>：</div>
+                    <div class="row_right">黄德发</div>
+                </div>
+                <div class="list_row">
+                    <div class="row_left"><span>学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;院</span>：</div>
+                    <div class="row_right">物理与信息工程学院</div>
+                </div>
+                <div class="list_row">
+                    <div class="row_left"><span>班&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;级</span>：</div>
+                    <div class="row_right">17电子2</div>
+                </div>
+                <div class="list_row">
+                    <div class="row_left"><span>辅&nbsp;&nbsp;导&nbsp;&nbsp;员</span>：</div>
+                    <div class="row_right">李小荟</div>
+                </div>
+                <div class="list_row">
+                    <div class="row_left"><span>返校日期</span>：</div>
+                    <div class="row_right">2021.05.20</div>
+                </div>
+        </div>
+    </div>
+    <div style="clear:both"></div>
+    <div class="info_box2">
+        审批通过
+        
+    </div>
+        <!--1个按钮：btn-div1  2个按钮：btn-div2 3个按钮：btn-div3-->
+        <div class="btn-box">
+                    <div class="btn-div3">
+                        <a id="turn_edit" href="./Revoke.html">撤销申请</a>
+                    </div>
+                <div class="btn-div3">
+                        <a id="turn_edit" href="./Trip27.html">查看行程</a>
+                </div>
+                    <div class="btn-div3">
+                        <a id="turn_edit" href="./HealthCard27.html">查看健康卡</a>
+                    </div>
+
+        </div>
+                    <div id="QR_code">
+                        <div id="qrcode"></div>
+                        <script src="../Scripts/qrcode.min.js"></script>
+                        <script type="text/javascript">
+                    var qrcode = new QRCode("qrcode", {
+                                text: "http://dxg.mnnu.edu.cn/spcp/web/arriveschool/index?id=10778074-1c02-487d-b4dc-60ddf404ffcc",
+                                width: 100,
+                                height: 100,
+                                colorDark: "#000000",
+                                colorLight: "#ffffff",
+                                correctLevel: QRCode.CorrectLevel.H
+                            });
+                        </script>
+                </div>
+</div>
+<link href="../Content/css/passcheck.css?dt=20200521" rel="stylesheet" />
+
+<style type="text/css">
+    @media screen and (min-width: 960px) {
+        /*PC端*/
+        .resist_bg {
+            background-image: url('../Content/img/Regist_bg.jpg');
+        }
+    }
+    @media screen and (max-width: 960px) {
+        /*手机端*/
+        body {
+            background-size: 100% 100%;
+            background-attachment: fixed;
+            background-image: url('../Content/img/Regist_bg.jpg');
+        }
+    }
+</style>
+        <link href="../Content/css/menustyle.css" rel="stylesheet" />
+        <script src="../Scripts/menu.js"></script>
+        <div id="cd-nav" class="is-fixed">
+            <a href="javascript:void(0)" class="cd-nav-trigger"><span></span></a>
+            <nav id="cd-main-nav">
+                <ul>
+                        <li>
+                            <a href="http://dxg.mnnu.edu.cn/SPCP/Web/Account/ChooseSys">
+                                <img src="../Content/img/icon1.png" /> 返回首页
+                            </a>
+                        </li>
+                        <li>
+                        <a href="http://dxg.mnnu.edu.cn/SPCP/Web/Account/Logout">
+                            <img src="../Content/img/icon3.png" /> 安全退出
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+</body>
+</html>
+<!--第二版-->
